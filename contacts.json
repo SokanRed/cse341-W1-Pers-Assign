@@ -1,0 +1,23 @@
+{
+    "contact01": {
+        "firstname": "Georges",
+        "lastName": "Janin",
+        "email": "georgesjanin@gmail.com",
+        "favoriteColor": "yellow",
+        "birthday": "05/19/1983"
+    },
+    "contact02": {
+        "firstname": "Martine",
+        "lastName": "Spagnolini",
+        "email": "martinespagonlini@gmail.com",
+        "favoriteColor": "blue",
+        "birthday": "07/03/1959"
+    },
+    "contact03": {
+        "firstname": "Bertille",
+        "lastName": "Poussard",
+        "email": "bertillepoussard@gmail.com",
+        "favoriteColor": "red",
+        "birthday": "11/30/1997"
+    }
+}
