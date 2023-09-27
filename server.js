@@ -9,7 +9,7 @@ app.use(bodyParser.json())
         next();
     })
 
-// app.use('/', require('./routes'));
+app.use('/', require('./routes'));
 app.use('/', require('./routes/contact'));
 
 app.listen(port, () => {

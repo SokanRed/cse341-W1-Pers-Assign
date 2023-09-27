@@ -1,7 +1,7 @@
-// const routes = require('express').Router();
+const routes = require('express').Router();
 
-// const myController = require('../controllers');
+const myController = require('../controllers');
 
-// routes.get('/', myController.awesomePerson);
+routes.get('/', myController.awesomePerson);
 
-// module.exports = routes;
+module.exports = routes;
