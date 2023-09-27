@@ -9,3 +9,5 @@ GET http://localhost:8080/get_contact HTTP/1.1
 ###
 GET http://localhost:8080/get_contactById HTTP/1.1
 
+###
+GET https://sokanred341-personal-assignment.onrender.com HTTP/1.1
