@@ -13,4 +13,4 @@ GET https://sokanred341-personal-assignment.onrender.com HTTP/1.1
 GET https://sokanred341-personal-assignment.onrender.com/get_contact HTTP/1.1
 
 ###
-GET GET https://sokanred341-personal-assignment.onrender.com/get_contactById HTTP/1.1
+GET https://sokanred341-personal-assignment.onrender.com/get_contactById HTTP/1.1
