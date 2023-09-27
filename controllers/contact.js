@@ -5,4 +5,9 @@ const getContact = async(req, res) => {
     res.send(Db);
 }
 
-module.exports = { getContact };
+const getContactById = async(req, res) => {
+    const ContactById = await contact.getContactById();
+    res.send(ContactById);
+}
+
+module.exports = { getContact, getContactById };

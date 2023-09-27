@@ -5,3 +5,6 @@ GET https://sokanred341-lesson1-personal-assignement.onrender.com HTTP/1.1
 
 ###
 GET http://localhost:8080/get_contact HTTP/1.1
+
+###
+GET http://localhost:8080/get_contactById HTTP/1.1
