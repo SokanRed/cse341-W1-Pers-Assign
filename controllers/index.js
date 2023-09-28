@@ -1,5 +1,5 @@
 const awesomePerson = (req, res) => {
-    res.send('Martine Spagnolini')
+  res.send('Martine Spagnolini');
 };
 
 module.exports = { awesomePerson };

@@ -6,24 +6,60 @@ const client = new MongoClient(process.env.uri);
 
 const { ObjectId } = require('mongodb');
 
-const getDb = async() => {
-    await client.connect();
+const getDb = async () => {
+  await client.connect();
 
-    const resultDb = await client.db("CSE341").collection("contacts").find();
+  const resultDb = await client.db('CSE341').collection('contacts').find();
 
-    const resultArray = await resultDb.toArray();
-    return resultArray;
-}
+  const resultArray = await resultDb.toArray();
+  return resultArray;
+};
 
-const getContactById = async() => {
-    await client.connect();
-    const resultContactById = await client.db("CSE341").collection("contacts").find({ _id: new ObjectId("651348064b5cb53057bf9c99") });
+const getContactById = async () => {
+  await client.connect();
+  const resultContactById = await client
+    .db('CSE341')
+    .collection('contacts')
+    .find({ _id: new ObjectId('651348064b5cb53057bf9c99') });
 
-    const resultArray = await resultContactById.toArray();
-    return resultArray;
-}
+  const resultArray = await resultContactById.toArray();
+  return resultArray;
+};
+
+const postContact = async () => {
+  await client.connect();
+  const resultContactById = await client;
+
+  const resultArray = await resultContactById.toArray();
+  return resultArray;
+};
+
+const putContactById = async () => {
+  await client.connect();
+  const resultContactById = await client
+    .db('CSE341')
+    .collection('contacts')
+    .add({ _id: new ObjectId('651348064b5cb53057bf9c99') });
+
+  const resultArray = await resultContactById.toArray();
+  return resultArray;
+};
+
+const deleteContactById = async () => {
+  await client.connect();
+  const resultContactById = await client
+    .db('CSE341')
+    .collection('contacts')
+    .find({ _id: new ObjectId('651348064b5cb53057bf9c99') });
+
+  const resultArray = await resultContactById.toArray();
+  return resultArray;
+};
 
 module.exports = {
-    getDb,
-    getContactById
+  getDb,
+  getContactById,
+  postContact,
+  putContactById,
+  deleteContactById
 };

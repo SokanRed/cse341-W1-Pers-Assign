@@ -1,34 +1,44 @@
 {
-    "name": "cse341-w1-pers-assign",
-    "version": "1.0.0",
-    "description": "",
-    "main": "server.js",
-    "engines": {
-        "npm": "9.8.1",
-        "node": "18.18.0"
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node server.js",
-        "dev_start": "nodemon server.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/SokanRed/cse341-W1-Pers-Assign.git"
-    },
-    "author": "Denis Poussard",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/SokanRed/cse341-W1-Pers-Assign/issues"
-    },
-    "homepage": "https://github.com/SokanRed/cse341-W1-Pers-Assign#readme",
-    "dependencies": {
-        "body-parser": "^1.20.2",
-        "dotenv": "^16.3.1",
-        "express": "^4.18.2",
-        "mongodb": "^6.1.0"
-    },
-    "devDependencies": {
-        "nodemon": "^3.0.1"
-    }
+  "name": "cse341_personal_assignment",
+  "version": "1.0.0",
+  "description": "CSE 341 Personal Assignment | Lesson 1 Purpose: Publish API to the web. | Lesson 2 Purpose: Connect API to a database. | Lesson 3 Purpose: Perform GET, POST, PUT, and DELETE requests in an API connected to a database.",
+  "main": "server.js",
+  "engines": {
+    "npm": "9.8.1",
+    "node": "18.18.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev_start": "nodemon server.js",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
+    "lint": "eslint .",
+    "lint:check": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --write './**/*.{js,jsx,ts, tsx,css,md,json}' --config ./.prettierrc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SokanRed/cse341-W1-Pers-Assign.git"
+  },
+  "author": "Denis Poussard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SokanRed/cse341-W1-Pers-Assign/issues"
+  },
+  "homepage": "https://github.com/SokanRed/cse341-W1-Pers-Assign#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongodb": "^6.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.0.0",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.3"
+  },
+  "keywords": []
 }
