@@ -14,3 +14,21 @@ GET https://sokanred341-personal-assignment.onrender.com/get_contact HTTP/1.1
 
 ###
 GET https://sokanred341-personal-assignment.onrender.com/get_contactById HTTP/1.1
+
+###
+POST http://localhost:8080/post_contact HTTP/1.1
+
+###
+PUT http://localhost:8080/contact/65173bc27ca7baa765fd75b1 HTTP/1.1 
+
+content-type: application/json
+{
+    "firstname": "francis",
+        "lastname": "Spagnolini",
+        "email": "sergespagnolini@gmail.com",
+        "favoriteColor": "turquoise",
+        "birthday": "09/26/1956"
+}
+
+###
+DELETE http://localhost:8080/deleteContactById/65173988a4c47bdad5f4bf3f HTTP/1.1 

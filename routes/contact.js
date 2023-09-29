@@ -5,9 +5,9 @@ const controllerContact = require('../controllers/contact');
 route.get('/get_contact', controllerContact.getContact);
 route.get('/get_contactById', controllerContact.getContactById);
 
-/*
-route.post('/get_contactById', controllerContact.createContact);
-route.put('/get_contactById', controllerContact.updateContact);
-route.delete('/get_contactById', controllerContact.deleteContact);
-*/
+
+route.post('/post_contact', controllerContact.postContact);
+route.put('/contact/:id', controllerContact.putContactById);
+route.delete('/deleteContactById/:id', controllerContact.deleteContactById);
+
 module.exports = route;
