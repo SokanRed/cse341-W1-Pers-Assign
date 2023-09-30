@@ -16,27 +16,21 @@ const postContact = async(req, res) => {
         "firstname": "Serge",
         "lastname": "Spagnolini",
         "email": "sergespagnolini@gmail.com",
-        "favoriteColor": "turquoise",
-        "birthday": "09/26/1956"
+        "favoriteColor": "Viridian Green",
+        "birthday": "1956/09/26"
     });
     res.status(201).send(`new contact was created ${createContact}`);
 };
 
 const putContactById = async(req, res) => {
     const userId = new ObjectId(req.params.id);
-    // const body = {
-    // "firstName": req.body.firstName,
-    // "lastName": req.body.lastName,
-    // "email": req.body.email,
-    // "favoriteColor": req.body.favoriteColor,
-    // "birthday": req.body.birthday
-    // };
+
     const body = {
         "firstname": "Francis",
         "lastname": "Spagnolini",
         "email": "francisspagnolini@gmail.com",
-        "favoriteColor": "turquoise",
-        "birthday": "09/26/1956"
+        "favoriteColor": "Turquoise",
+        "birthday": "1956/09/26"
     };
     const updateContactById = await contact.putContactById(userId, body);
     res.status(204).send("contact was updated");

@@ -1,16 +1,16 @@
 GET http://localhost:8080 HTTP/1.1
 
 ###
-GET http://localhost:8080/get_contact HTTP/1.1
-
-###
-GET http://localhost:8080/get_contactById HTTP/1.1
-
-###
 GET https://sokanred341-personal-assignment.onrender.com HTTP/1.1
 
 ###
+GET http://localhost:8080/get_contact HTTP/1.1
+
+###
 GET https://sokanred341-personal-assignment.onrender.com/get_contact HTTP/1.1
+
+###
+GET http://localhost:8080/get_contactById HTTP/1.1
 
 ###
 GET https://sokanred341-personal-assignment.onrender.com/get_contactById HTTP/1.1
@@ -19,16 +19,34 @@ GET https://sokanred341-personal-assignment.onrender.com/get_contactById HTTP/1.
 POST http://localhost:8080/post_contact HTTP/1.1
 
 ###
+POST https://sokanred341-personal-assignment.onrender.com/post_contact HTTP/1.1
+
+###
 PUT http://localhost:8080/contact/65173bc27ca7baa765fd75b1 HTTP/1.1 
 
 content-type: application/json
 {
-    "firstname": "francis",
-        "lastname": "Spagnolini",
-        "email": "sergespagnolini@gmail.com",
-        "favoriteColor": "turquoise",
-        "birthday": "09/26/1956"
+    "firstname": "Henry",
+    "lastname": "Spagnolini",
+    "email": "henryspagnolini@gmail.com",
+    "favoriteColor": "Alizarin Crimson",
+    "birthday": "1922/05/22"
 }
 
 ###
-DELETE http://localhost:8080/deleteContactById/65173988a4c47bdad5f4bf3f HTTP/1.1 
+PUT https://sokanred341-personal-assignment.onrender.com/contact/65173bc27ca7baa765fd75b1 HTTP/1.1 
+
+content-type: application/json
+{
+    "firstname": "Rosalie",
+    "lastname": "Spagnolini",
+    "email": "rosaliespagnolini@gmail.com",
+    "favoriteColor": "Cobalt Blue Turquoise",
+    "birthday": "1926/02/06"
+}
+
+###
+DELETE http://localhost:8080/deleteContactById/65173988a4c47bdad5f4bf3f HTTP/1.1
+
+###
+DELETE https://sokanred341-personal-assignment.onrender.com/deleteContactById/65173988a4c47bdad5f4bf3f HTTP/1.1
