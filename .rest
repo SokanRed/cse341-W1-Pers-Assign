@@ -3,18 +3,21 @@ GET http://localhost:8080 HTTP/1.1
 ###
 GET https://sokanred341-personal-assignment.onrender.com HTTP/1.1
 
+# Get Contact List
 ###
 GET http://localhost:8080/get_contact HTTP/1.1
 
 ###
 GET https://sokanred341-personal-assignment.onrender.com/get_contact HTTP/1.1
 
+# Get Contact By Id
 ###
 GET http://localhost:8080/get_contactById HTTP/1.1
 
 ###
 GET https://sokanred341-personal-assignment.onrender.com/get_contactById HTTP/1.1
 
+# Add Contact
 ###
 POST http://localhost:8080/post_contact HTTP/1.1
 content-type: application/json
@@ -39,6 +42,7 @@ content-type: application/json
     "birthday": "1948/06/15"
 }
 
+# Update Contact
 ###
 PUT http://localhost:8080/contact/651829a5ecd8751ea434fdd1 HTTP/1.1 
 content-type: application/json
@@ -63,6 +67,7 @@ content-type: application/json
     "birthday": "1926/02/06"
 }
 
+# Delete Contact
 ###
 DELETE http://localhost:8080/deleteContactById/65183f15485fb8c40e253023 HTTP/1.1
 
