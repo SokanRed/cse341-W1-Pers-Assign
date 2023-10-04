@@ -1,7 +1,12 @@
-const routes = require('express').Router();
+const router = require('express').Router();
 
 const myController = require('../controllers');
 
-routes.get('/', myController.awesomePerson);
+const contact = require('./contact');
 
-module.exports = routes;
+const swagger = require('./swagger');
+
+router.use('/', contact)
+    .use('/api-docs', swagger);
+
+module.exports = router;
