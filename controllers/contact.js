@@ -1,16 +1,23 @@
-const contact = require('../db/connect');
+const mongodb = require("../db/connect");
 
-const { ObjectId } = require('mongodb');
+const ObjectId = require('mongodb').ObjectId;
 
 
 const getContact = async(req, res) => {
-    const Db = await contact.getDb();
+    const Db = await mongodb.getDb().db('CSE341').collection("contacts").find().toArray();
     res.send(Db);
 };
 
 const getContactById = async(req, res) => {
-    const contactById = await contact.getContactById();
-    res.send(contactById);
+    const userId = new ObjectId(req.params.id);
+    const result = await mongodb
+        .getDb()
+        .db('CSE341')
+        .collection("contacts")
+        .find({ _id: userId })
+        .toArray();
+    res.setHeader("Content-Type", "application/json");
+    res.status(200).json(result);
 };
 
 const postContact = async(req, res) => {
@@ -21,29 +28,44 @@ const postContact = async(req, res) => {
         favoriteColor: req.body.favoriteColor,
         birthday: req.body.birthday
     };
+    const result = await mongodb
+        .getDb()
+        .db('CSE341')
+        .collection("contacts")
+        .insertOne(createContact);
+    res.status(200).json(result);
 
-    const response = await contact.postContact(createContact);
-    res.status(201).send(`New contact was created ${response}`);
 };
 
 const putContactById = async(req, res) => {
     const userId = new ObjectId(req.params.id);
-    const body = {
+    const updateContact = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
         favoriteColor: req.body.favoriteColor,
         birthday: req.body.birthday
     };
-
-    const response = await contact.putContactById(userId, body);
-    res.status(204).send("Contact was updated");
-}
+    const result = await mongodb
+        .getDb()
+        .db('CSE341')
+        .collection("contacts")
+        .find({ _id: userId })
+        .replaceOne({ _id: userId }, updateContact);
+    res.setHeader("Content-Type", "application/json");
+    res.status(204).json(result);
+};
 
 const deleteContactById = async(req, res) => {
     const userId = new ObjectId(req.params.id);
-    const deleteContactById = await contact.deleteContactById(userId);
-    res.status(200).send("Contact by Id was deleted from database");
+    const result = await mongodb
+        .getDb()
+        .db('CSE341')
+        .collection("contacts")
+        .remove({ _id: userId }, true);
+    res.setHeader("Content-Type", "application/json");
+    res.status(200).send("Contact by Id was deleted from database")
+    res.status(200).json(result);
 };
 
 module.exports = { getContact, getContactById, postContact, putContactById, deleteContactById };

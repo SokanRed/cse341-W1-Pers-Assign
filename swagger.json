@@ -1,37 +1,147 @@
 {
-    "openapi": "3.0.0",
+    "swagger": "2.0",
     "info": {
-        "title": "Contact API",
-        "version": "1.0.0",
-        "description": "API for managing the contacts CRUD requests"
+        "title": "My API",
+        "description": "Contact API",
+        "version": "1.0.0"
     },
+    "host": "sokanred341-personal-assignment.onrender.com",
+    "basePath": "/",
+    "schemes": [
+        "https"
+    ],
     "paths": {
-        "/contacts": {
+        "/api-docs": {
             "get": {
-                "summary": "Get all contacts",
+                "description": "",
+                "parameters": [],
+                "responses": {}
+            }
+        },
+        "/contacts/": {
+            "get": {
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
                 "responses": {
                     "200": {
-                        "description": "Successful response",
-                        "content": { "application/json": {} }
-                    },
-                    "404": { "description": "No data found" },
-                    "500": { "description": "Internal server error" }
+                        "description": "OK"
+                    }
                 }
             },
             "post": {
-                "summary": "Create a new contact",
-                "requestBody": {
-                    "description": "Contact object",
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": { "$ref": "#/components/schemas/Contact" }
+                "description": "",
+                "parameters": [{
+                    "name": "body",
+                    "in": "body",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "firstName": {
+                                "example": "any"
+                            },
+                            "lastName": {
+                                "example": "any"
+                            },
+                            "email": {
+                                "example": "any"
+                            },
+                            "favoriteColor": {
+                                "example": "any"
+                            },
+                            "birthday": {
+                                "example": "any"
+                            }
                         }
                     }
-                },
+                }],
                 "responses": {
-                    "201": { "description": "Contact created successfully" },
-                    "500": { "description": "Internal server error" }
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/contacts/{id}": {
+            "get": {
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "put": {
+                "description": "",
+                "parameters": [{
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "firstName": {
+                                    "example": "any"
+                                },
+                                "lastName": {
+                                    "example": "any"
+                                },
+                                "email": {
+                                    "example": "any"
+                                },
+                                "favoriteColor": {
+                                    "example": "any"
+                                },
+                                "birthday": {
+                                    "example": "any"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            },
+            "delete": {
+                "description": "",
+                "parameters": [{
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
                 }
             }
         }

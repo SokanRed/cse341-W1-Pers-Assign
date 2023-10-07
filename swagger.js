@@ -9,7 +9,7 @@ const doc = {
     schemes: ['http'],
 };
 
-const outputFile = './swagger';
+const outputFile = './swagger.json';
 const endpointsFiles = ['./routes/index.js'];
 
 // generate swagger.json
