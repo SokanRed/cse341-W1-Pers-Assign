@@ -10,6 +10,6 @@ router.post('/contact', controllerContact.postContact);
 
 router.put('/contact/:id', controllerContact.putContactById);
 
-router.delete('/Contact/:id', controllerContact.deleteContactById);
+router.delete('/contact/:id', controllerContact.deleteContactById);
 
 module.exports = router;

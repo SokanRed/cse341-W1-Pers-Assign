@@ -50,7 +50,6 @@ const putContactById = async(req, res) => {
         .getDb()
         .db('CSE341')
         .collection("contacts")
-        .find({ _id: userId })
         .replaceOne({ _id: userId }, updateContact);
     res.setHeader("Content-Type", "application/json");
     res.status(204).json(result);
@@ -62,7 +61,7 @@ const deleteContactById = async(req, res) => {
         .getDb()
         .db('CSE341')
         .collection("contacts")
-        .remove({ _id: userId }, true);
+        .deleteOne({ _id: userId });
     res.setHeader("Content-Type", "application/json");
     res.status(200).send("Contact by Id was deleted from database")
     res.status(200).json(result);

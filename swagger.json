@@ -18,9 +18,9 @@
                 "responses": {}
             }
         },
-        "/contacts/": {
+        "/contact/": {
             "get": {
-                "description": "",
+                "description": "Get all contacts",
                 "produces": [
                     "application/json"
                 ],
@@ -32,7 +32,7 @@
                 }
             },
             "post": {
-                "description": "",
+                "description": "Created contact",
                 "parameters": [{
                     "name": "body",
                     "in": "body",
@@ -67,9 +67,9 @@
                 }
             }
         },
-        "/contacts/{id}": {
+        "/contact/{id}": {
             "get": {
-                "description": "",
+                "description": "Get contact by Id",
                 "produces": [
                     "application/json"
                 ],
@@ -86,7 +86,7 @@
                 }
             },
             "put": {
-                "description": "",
+                "description": "Update contact",
                 "parameters": [{
                         "name": "id",
                         "in": "path",
@@ -128,7 +128,7 @@
                 }
             },
             "delete": {
-                "description": "",
+                "description": "Delete contact",
                 "parameters": [{
                     "name": "id",
                     "in": "path",
@@ -136,7 +136,7 @@
                     "type": "string"
                 }],
                 "responses": {
-                    "204": {
+                    "200": {
                         "description": "No Content"
                     },
                     "500": {
