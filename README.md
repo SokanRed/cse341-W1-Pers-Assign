@@ -18,7 +18,7 @@ If requested through the browser, you should see this data on the screen as show
 Personal notes:
 
 LOCALHOST:
-
+(check the schemes in swagger.js)
 "host": "localhost:8080",
 "basePath": "/",
 "schemes": [
@@ -26,7 +26,7 @@ LOCALHOST:
 ],
 
 RENDER:
-
+(check the schemes in swagger.js)
 "host": "sokanred341-personal-assignment.onrender.com",
 "basePath": "/",
 "schemes": [
